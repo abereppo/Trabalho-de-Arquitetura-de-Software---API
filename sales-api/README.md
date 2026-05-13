@@ -1,29 +1,25 @@
-# 🛒 Sales API — RESTful com MVC em Express
+Estrutura de instalação do projeto:
 
-API RESTful de sistema de vendas simulado com dados mocados, seguindo arquitetura **MVC (Model-View-Controller)** em **Express.js**.
-
----
-
-## 🚀 Instalação e Execução
+1 - Instalação
 
 ```bash
 npm install
-npm start         # produção
-npm run dev       # desenvolvimento com nodemon
+npm start        
+npm run dev       
 ```
 
-O servidor inicia em: `http://localhost:3000`
+O servidor começa em: `http://localhost:3000`
 
 ---
 
-## 🗂️ Estrutura do Projeto
+Estrutura completa:
 
 ```
 sales-api/
 ├── data/
-│   └── db.js                  # Banco de dados em memória (mock)
+│   └── db.js                  
 ├── src/
-│   ├── app.js                 # Entry point
+│   ├── app.js                 
 │   ├── controllers/
 │   │   ├── productController.js
 │   │   ├── clientController.js
@@ -41,9 +37,9 @@ sales-api/
 └── package.json
 ```
 
----
 
-## 📦 PRODUTOS — `/api/products`
+
+Produtos ( `/api/products` ):
 
 | Método | Rota               | Descrição             |
 |--------|--------------------|-----------------------|
@@ -65,7 +61,7 @@ sales-api/
 
 ---
 
-## 👤 CLIENTES — `/api/clients`
+ CLIENTES — (`/api/clients`):
 
 | Método | Rota              | Descrição         |
 |--------|-------------------|-------------------|
@@ -75,7 +71,7 @@ sales-api/
 | PUT    | /api/clients/:id  | Atualizar cliente |
 | DELETE | /api/clients/:id  | Remover cliente   |
 
-**Body para POST/PUT:**
+
 ```json
 {
   "name": "João Silva",
@@ -86,7 +82,7 @@ sales-api/
 
 ---
 
-## 🧾 PEDIDOS — `/api/orders`
+Requisições: (`/api/orders`)
 
 | Método | Rota                    | Descrição              |
 |--------|-------------------------|------------------------|
@@ -97,7 +93,7 @@ sales-api/
 | PATCH  | /api/orders/:id/status  | Atualizar status       |
 | DELETE | /api/orders/:id         | Remover pedido         |
 
-**Body para POST:**
+
 ```json
 {
   "clientId": "1",
@@ -108,7 +104,7 @@ sales-api/
 }
 ```
 
-**Body para PATCH /status:**
+
 ```json
 { "status": "completed" }
 ```
@@ -116,9 +112,9 @@ sales-api/
 
 ---
 
-## ✅ Regras de Negócio
+Necessidades para o projeto ser funcional:
 
-- Ao criar um pedido, o **estoque é decrementado** automaticamente.
+- Ao criar um pedido, o **estoque é desocntado** automaticamente.
 - Não é possível criar pedido com quantidade maior que o estoque disponível.
 - E-mails de clientes são **únicos** (retorna 409 em duplicata).
 - Campos obrigatórios são validados com retorno **400 Bad Request**.
