@@ -1,0 +1,17 @@
+{
+  "name": "sales-api",
+  "version": "1.0.0",
+  "description": "API RESTful de sistema de vendas com MVC em Express",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
